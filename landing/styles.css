@@ -1,4 +1,5 @@
 :root {
+  --surface: rgba(8, 12, 24, 0.75);
   --bg: #080b1a;
   --bg-soft: #101735;
   --text: #f4f6ff;
@@ -23,9 +24,23 @@ body {
   font-family: "Inter", "Segoe UI", Roboto, sans-serif;
   color: var(--text);
   background: radial-gradient(circle at top left, #16244c 0%, #080b1a 40%, #05070f 100%);
+  background-color: var(--bg);
   line-height: 1.6;
   position: relative;
   overflow-x: hidden;
+}
+
+
+body.theme-light {
+  background: radial-gradient(circle at top left, #ffffff 0%, #eff4ff 55%, #e6eeff 100%);
+  --bg: #f3f6ff;
+  --bg-soft: #dfe7ff;
+  --text: #10182c;
+  --muted: #4c5978;
+  --card: rgba(255, 255, 255, 0.78);
+  --card-border: rgba(89, 109, 187, 0.26);
+  --shadow: 0 22px 40px rgba(87, 106, 164, 0.18);
+  --surface: rgba(242, 246, 255, 0.9);
 }
 
 a {
@@ -394,6 +409,63 @@ h1 {
   gap: 0.9rem;
 }
 
+.theme-toggle {
+  border: 1px solid var(--card-border);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--text);
+  min-height: 40px;
+  padding: 0 0.8rem;
+}
+
+.hero-meta {
+  margin-top: 1rem;
+  color: var(--muted);
+}
+
+.quiz__progress span {
+  width: 17%;
+}
+
+.quiz-screen {
+  display: block;
+}
+
+.quiz-error {
+  min-height: 1.2rem;
+  color: #ff8ca0;
+  font-size: 0.9rem;
+}
+
+.quiz-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.quiz-prev[disabled] {
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 9, 20, 0.72);
+  display: grid;
+  place-items: center;
+  z-index: 70;
+}
+
+.modal__content {
+  width: min(420px, calc(100% - 2rem));
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 1.3rem;
+  box-shadow: var(--shadow);
+}
+
 .lead-form label {
   display: grid;
   gap: 0.45rem;
@@ -407,7 +479,7 @@ h1 {
   border: 1px solid rgba(150, 171, 255, 0.35);
   padding: 0 0.85rem;
   color: var(--text);
-  background: rgba(8, 12, 24, 0.75);
+  background: var(--surface);
 }
 
 .footer {
@@ -465,12 +537,8 @@ h1 {
 }
 
 @media (min-width: 480px) {
-  .lead-form {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .lead-form .btn {
-    grid-column: 1 / -1;
+  .quiz-actions {
+    justify-content: flex-end;
   }
 }
 

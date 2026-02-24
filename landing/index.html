@@ -17,6 +17,7 @@
     <header class="header" id="top">
       <div class="container nav-wrap">
         <a class="brand" href="#top" aria-label="PetCare — к началу страницы">PetCare</a>
+        <button class="theme-toggle" type="button" aria-label="Переключить тему">🌙 Тема</button>
         <button class="menu-toggle" aria-expanded="false" aria-controls="nav" aria-label="Открыть меню">
           <span></span><span></span><span></span>
         </button>
@@ -42,6 +43,10 @@
           <div class="hero__actions">
             <a class="btn btn--primary" href="#lead-form">Получить план</a>
             <a class="btn btn--ghost" href="#">Запустить Telegram-бота</a>
+          </div>
+          <div class="hero-meta">
+            <p>До конца спецусловий: <strong class="countdown" aria-live="polite">24:00:00</strong></p>
+            <p>Осталось мест: <strong class="slots-counter">12</strong></p>
           </div>
         </div>
 
@@ -203,48 +208,76 @@
       <section class="section container" id="lead-form">
         <div class="section__heading reveal">
           <p class="eyebrow">Начните уже сегодня</p>
-          <h2>Получить персональный план</h2>
+          <h2>Квиз для персонального плана</h2>
         </div>
-        <form class="lead-form glass-card reveal" aria-label="Форма заявки на персональный план">
-          <label>Имя
-            <input type="text" name="name" required aria-label="Введите ваше имя" />
-          </label>
-          <label>Email или Telegram
-            <input type="text" name="contact" required aria-label="Введите контакт: email или Telegram" />
-          </label>
-          <label>Вид питомца
-            <select name="petType" required aria-label="Выберите вид питомца">
-              <option value="">Выберите</option>
-              <option>Собака</option>
-              <option>Кошка</option>
-              <option>Птица</option>
-              <option>Грызун</option>
-              <option>Другой</option>
-            </select>
-          </label>
-          <label>Порода
-            <input type="text" name="breed" required aria-label="Введите породу питомца" />
-          </label>
-          <label>Возраст
-            <select name="age" required aria-label="Выберите возраст питомца">
-              <option value="">Выберите</option>
-              <option>До 1 года</option>
-              <option>1–3 года</option>
-              <option>4–7 лет</option>
-              <option>8+ лет</option>
-            </select>
-          </label>
-          <label>Цель
-            <select name="goal" required aria-label="Выберите вашу цель">
-              <option value="">Выберите</option>
-              <option>Наладить питание</option>
-              <option>Улучшить дисциплину</option>
-              <option>Контроль здоровья</option>
-              <option>Комплексный уход</option>
-            </select>
-          </label>
-          <button class="btn btn--primary" type="submit">Отправить заявку</button>
-        </form>
+        <div class="lead-form glass-card reveal quiz" aria-label="Квиз заявки на персональный план">
+          <div class="quiz__progress progress-bar" role="progressbar" aria-valuenow="17" aria-valuemin="0" aria-valuemax="100">
+            <span></span>
+          </div>
+          <p class="quiz__step-label">Шаг <span class="quiz-current-step">1</span> из 6</p>
+
+          <div class="quiz-screen" data-screen="0">
+            <label>Вид питомца
+              <select name="petType" aria-label="Выберите вид питомца">
+                <option value="">Выберите</option>
+                <option>Собака</option>
+                <option>Кошка</option>
+                <option>Птица</option>
+                <option>Грызун</option>
+                <option>Другой</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="quiz-screen" data-screen="1" hidden>
+            <label>Порода
+              <input type="text" name="breed" aria-label="Введите породу питомца" />
+            </label>
+          </div>
+
+          <div class="quiz-screen" data-screen="2" hidden>
+            <label>Возраст
+              <select name="age" aria-label="Выберите возраст питомца">
+                <option value="">Выберите</option>
+                <option>До 1 года</option>
+                <option>1–3 года</option>
+                <option>4–7 лет</option>
+                <option>8+ лет</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="quiz-screen" data-screen="3" hidden>
+            <label>Цель
+              <select name="goal" aria-label="Выберите вашу цель">
+                <option value="">Выберите</option>
+                <option>Наладить питание</option>
+                <option>Улучшить дисциплину</option>
+                <option>Контроль здоровья</option>
+                <option>Комплексный уход</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="quiz-screen" data-screen="4" hidden>
+            <label>Ваше имя
+              <input type="text" name="name" aria-label="Введите ваше имя" />
+            </label>
+          </div>
+
+          <div class="quiz-screen" data-screen="5" hidden>
+            <label>Email
+              <input type="email" name="contact" aria-label="Введите email" />
+            </label>
+          </div>
+
+          <p class="quiz-error" aria-live="polite"></p>
+
+          <div class="quiz-actions">
+            <button class="btn btn--ghost quiz-prev" type="button">Назад</button>
+            <button class="btn btn--primary quiz-next" type="button">Далее</button>
+          </div>
+        </div>
       </section>
     </main>
 
@@ -261,6 +294,13 @@
     </footer>
 
     <div class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+    <div class="modal" hidden>
+      <div class="modal__content">
+        <h3>Спасибо! Заявка подтверждена</h3>
+        <p>Мы сохранили ваши ответы и скоро отправим персональный план.</p>
+        <button class="btn btn--primary modal-close" type="button">Понятно</button>
+      </div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
