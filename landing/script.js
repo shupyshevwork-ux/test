@@ -1,87 +1,75 @@
-const menuToggle = document.querySelector('.menu-toggle');
+const root = document.documentElement;
 const nav = document.querySelector('.nav');
-const navLinks = document.querySelectorAll('.nav a');
+const menuToggle = document.querySelector('.menu-toggle');
+const themeToggle = document.querySelector('.theme-toggle');
+const form = document.getElementById('quizForm');
+const modal = document.getElementById('thanksModal');
+const closeModal = document.getElementById('closeModal');
+const seatsEl = document.getElementById('seats');
+const reserveBtn = document.getElementById('reserveBtn');
+const timerEl = document.getElementById('timer');
 
-if (menuToggle && nav) {
-  menuToggle.addEventListener('click', () => {
-    const isOpen = nav.classList.toggle('is-open');
-    menuToggle.setAttribute('aria-expanded', String(isOpen));
-    menuToggle.setAttribute('aria-label', isOpen ? 'Закрыть меню' : 'Открыть меню');
-  });
+const savedTheme = localStorage.getItem('petcareTheme');
+if (savedTheme) root.setAttribute('data-theme', savedTheme);
 
-  navLinks.forEach((link) => {
-    link.addEventListener('click', () => {
-      nav.classList.remove('is-open');
-      menuToggle.setAttribute('aria-expanded', 'false');
-      menuToggle.setAttribute('aria-label', 'Открыть меню');
-    });
-  });
-}
+themeToggle?.addEventListener('click', () => {
+  const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  root.setAttribute('data-theme', next);
+  localStorage.setItem('petcareTheme', next);
+});
 
-const revealElements = document.querySelectorAll('.reveal');
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  },
-  { threshold: 0.18 }
-);
+menuToggle?.addEventListener('click', () => {
+  nav?.classList.toggle('open');
+  const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+  menuToggle.setAttribute('aria-expanded', String(!expanded));
+});
 
-revealElements.forEach((element) => observer.observe(element));
-
-const faqItems = document.querySelectorAll('.faq-item');
-faqItems.forEach((item) => {
-  const button = item.querySelector('.faq-question');
-  const answer = item.querySelector('.faq-answer');
-
-  const toggleFaq = () => {
-    const isExpanded = button.getAttribute('aria-expanded') === 'true';
-    button.setAttribute('aria-expanded', String(!isExpanded));
-    answer.hidden = isExpanded;
-  };
-
-  button.addEventListener('click', toggleFaq);
-  button.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault();
-      toggleFaq();
-    }
+document.querySelectorAll('.nav a').forEach((a) => {
+  a.addEventListener('click', () => {
+    nav?.classList.remove('open');
+    menuToggle?.setAttribute('aria-expanded', 'false');
   });
 });
 
-const form = document.querySelector('.lead-form');
-const toast = document.querySelector('.toast');
-
-if (form && toast) {
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
-
-    const formData = new FormData(form);
-    const leadData = {
-      name: formData.get('name')?.toString().trim(),
-      contact: formData.get('contact')?.toString().trim(),
-      petType: formData.get('petType')?.toString(),
-      breed: formData.get('breed')?.toString().trim(),
-      age: formData.get('age')?.toString(),
-      goal: formData.get('goal')?.toString()
-    };
-
-    const existingLeads = JSON.parse(localStorage.getItem('petcareLeads') || '[]');
-    existingLeads.push({ ...leadData, createdAt: new Date().toISOString() });
-    localStorage.setItem('petcareLeads', JSON.stringify(existingLeads));
-
-    console.log('PetCare Lead:', leadData);
-
-    toast.textContent = 'Заявка принята';
-    toast.classList.add('show');
-
-    form.reset();
-
-    setTimeout(() => {
-      toast.classList.remove('show');
-    }, 2600);
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
   });
-}
+}, { threshold: 0.2 });
+
+document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+form?.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const data = Object.fromEntries(new FormData(form).entries());
+  const payload = { ...data, createdAt: new Date().toISOString() };
+  const existing = JSON.parse(localStorage.getItem('petcareQuiz') || '[]');
+  existing.push(payload);
+  localStorage.setItem('petcareQuiz', JSON.stringify(existing));
+  console.log('PetCare quiz:', payload);
+  modal?.classList.add('show');
+  modal?.setAttribute('aria-hidden', 'false');
+  form.reset();
+});
+
+closeModal?.addEventListener('click', () => {
+  modal?.classList.remove('show');
+  modal?.setAttribute('aria-hidden', 'true');
+});
+
+let seats = Number(localStorage.getItem('petcareSeats') || '47');
+seatsEl.textContent = String(seats);
+reserveBtn?.addEventListener('click', () => {
+  seats = Math.max(0, seats - 1);
+  seatsEl.textContent = String(seats);
+  localStorage.setItem('petcareSeats', String(seats));
+});
+
+let sec = 23 * 3600 + 59 * 60 + 59;
+setInterval(() => {
+  const h = String(Math.floor(sec / 3600)).padStart(2, '0');
+  const m = String(Math.floor((sec % 3600) / 60)).padStart(2, '0');
+  const s = String(sec % 60).padStart(2, '0');
+  timerEl.textContent = `${h}:${m}:${s}`;
+  sec = sec > 0 ? sec - 1 : 23 * 3600 + 59 * 60 + 59;
+}, 1000);
