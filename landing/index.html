@@ -1,32 +1,31 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="uk" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="PetCare — персональный помощник по уходу за питомцем: кормление, уход, дрессировка и напоминания."
+      content="PetCare — персональний помічник з догляду за улюбленцем: харчування, нагадування, медкартка та поради."
     />
-    <title>PetCare — Персональный уход за питомцем</title>
+    <title>PetCare — Преміальний догляд за улюбленцем</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="bg-glow bg-glow--one" aria-hidden="true"></div>
-    <div class="bg-glow bg-glow--two" aria-hidden="true"></div>
-
-    <header class="header" id="top">
+    <header class="header">
       <div class="container nav-wrap">
-        <a class="brand" href="#top" aria-label="PetCare — к началу страницы">PetCare</a>
-        <button class="menu-toggle" aria-expanded="false" aria-controls="nav" aria-label="Открыть меню">
-          <span></span><span></span><span></span>
+        <a class="brand" href="#hero">PetCare</a>
+        <button class="menu-toggle" type="button" aria-label="Відкрити меню" aria-expanded="false" aria-controls="nav">
+          ☰
         </button>
-        <nav class="nav" id="nav" aria-label="Основная навигация">
-          <a href="#how">Как это работает</a>
-          <a href="#features">Возможности</a>
-          <a href="#pricing">Тарифы</a>
-          <a href="#reviews">Отзывы</a>
+        <nav class="nav" id="nav" aria-label="Основна навігація">
+          <a href="#benefits">Переваги</a>
+          <a href="#how">Як це працює</a>
+          <a href="#inside">Що всередині</a>
+          <a href="#reviews">Відгуки</a>
           <a href="#faq">FAQ</a>
-          <a href="#lead-form">Оставить заявку</a>
+          <a href="#early">Ранній доступ</a>
+          <a class="btn btn--small" href="#quiz">Почати квіз</a>
+          <button class="theme-toggle" type="button" aria-label="Перемкнути тему">🌓</button>
         </nav>
       </div>
     </header>
@@ -34,233 +33,124 @@
     <main>
       <section class="hero container" id="hero">
         <div class="hero__content reveal">
-          <p class="eyebrow">Умный помощник 24/7</p>
-          <h1>Персональный помощник по уходу за питомцем</h1>
-          <p class="hero__subtitle">
-            Советы по кормлению, уходу и дрессировке под вид, породу и возраст
+          <h1>Персональний помічник з догляду за вашим хвостатим 🐾</h1>
+          <p class="subtitle">
+            План харчування, догляд і здоров’я — під вид, породу та вік. Нагадування, поради й цифрова медкартка в
+            одному місці.
           </p>
-          <div class="hero__actions">
-            <a class="btn btn--primary" href="#lead-form">Получить план</a>
-            <a class="btn btn--ghost" href="#">Запустить Telegram-бота</a>
+          <div class="chips">
+            <span>Харчування</span><span>Нагадування</span><span>Медкартка</span><span>Виховання</span
+            ><span>Консультації</span>
+          </div>
+          <div class="actions">
+            <a class="btn" href="#quiz">Почати квіз і отримати план</a>
+            <a class="btn btn--ghost" href="#early">Передзамовити ранній доступ</a>
           </div>
         </div>
-
-        <article class="plan-card reveal" aria-label="Пример персонального плана">
-          <h2>Персональный план</h2>
+        <article class="plan-card reveal">
+          <h2>Ваш персональний план</h2>
           <ul>
-            <li><span>Питание:</span> 3 приёма в день + вода по графику</li>
-            <li><span>Активность:</span> 2 прогулки и 20 минут игр</li>
-            <li><span>Уход:</span> Напоминание о груминге в пятницу</li>
-            <li><span>Здоровье:</span> Чек-лист прививок и витаминов</li>
+            <li>План харчування</li>
+            <li>Графік процедур</li>
+            <li>Нагадування</li>
+            <li>Чек-лист догляду</li>
           </ul>
-          <div class="plan-card__progress">
-            <p>Прогресс недели</p>
-            <div class="progress-bar" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100">
-              <span></span>
-            </div>
-            <strong>72%</strong>
-          </div>
         </article>
+      </section>
 
-        <a class="scroll-indicator" href="#how" aria-label="Прокрутить к разделу Как это работает">
-          <span></span>
-        </a>
+      <section class="section container" id="benefits">
+        <h2 class="reveal">Знайомо?</h2>
+        <div class="grid grid--3">
+          <article class="card reveal"><h3>Інформації багато — ясності мало</h3><p>Поради суперечать одна одній, і складно зрозуміти, що підходить саме вам.</p></article>
+          <article class="card reveal"><h3>Чим годувати правильно?</h3><p>Натуралка чи корм, як підібрати під вік і вагу?</p></article>
+          <article class="card reveal"><h3>Легко забути важливе</h3><p>Обробки, щеплення, аналізи, візити.</p></article>
+          <article class="card reveal"><h3>Поведінка й виховання</h3><p>Не зрозуміло, з чого почати.</p></article>
+          <article class="card reveal"><h3>Тривога через симптоми</h3><p>Паніка замість системного підходу.</p></article>
+          <article class="card reveal"><h3>Хочеться порядку</h3><p>Медкартка й історія в одному місці.</p></article>
+        </div>
       </section>
 
       <section class="section container" id="how">
-        <div class="section__heading reveal">
-          <p class="eyebrow">Просто и быстро</p>
-          <h2>Как это работает</h2>
-        </div>
-        <div class="steps">
-          <article class="glass-card reveal">
-            <p class="step-number">01</p>
-            <h3>Выбор животного</h3>
-            <p>Укажите вид питомца и базовые предпочтения по режиму.</p>
-          </article>
-          <article class="glass-card reveal">
-            <p class="step-number">02</p>
-            <h3>Порода и возраст</h3>
-            <p>Уточните породу, возраст и особенности поведения питомца.</p>
-          </article>
-          <article class="glass-card reveal">
-            <p class="step-number">03</p>
-            <h3>План + напоминания</h3>
-            <p>Получите персональный план ухода и автоматические уведомления.</p>
-          </article>
+        <h2 class="reveal">Як це працює</h2>
+        <div class="grid">
+          <article class="card reveal"><strong>1.</strong><p>Відповідаєте на кілька питань</p></article>
+          <article class="card reveal"><strong>2.</strong><p>Отримуєте персональний план</p></article>
+          <article class="card reveal"><strong>3.</strong><p>Користуєтесь щодня з нагадуваннями</p></article>
         </div>
       </section>
 
-      <section class="section container" id="features">
-        <div class="section__heading reveal">
-          <p class="eyebrow">Все нужное в одном месте</p>
-          <h2>Что внутри</h2>
-        </div>
-        <div class="features-grid">
-          <article class="glass-card reveal"><h3>Кормление</h3><p>Рационы по возрасту, породе и активности.</p></article>
-          <article class="glass-card reveal"><h3>Уход</h3><p>Графики гигиены, груминга и сезонных процедур.</p></article>
-          <article class="glass-card reveal"><h3>Дрессировка</h3><p>Пошаговые привычки и базовые команды без стресса.</p></article>
-          <article class="glass-card reveal"><h3>Здоровье</h3><p>Профилактика, сигналы тревоги и рекомендации к визиту.</p></article>
-          <article class="glass-card reveal"><h3>Чек-листы</h3><p>Еженедельные списки дел и контроль важных задач.</p></article>
-          <article class="glass-card reveal"><h3>Напоминания</h3><p>Вакцины, витамины и регулярные процедуры вовремя.</p></article>
+      <section class="section container" id="inside">
+        <h2 class="reveal">Що всередині</h2>
+        <div class="grid grid--4">
+          <article class="card reveal"><p>1. Персональне харчування</p></article>
+          <article class="card reveal"><p>2. Догляд без зайвого</p></article>
+          <article class="card reveal"><p>3. Поради з виховання</p></article>
+          <article class="card reveal"><p>4. Нагадування</p></article>
+          <article class="card reveal"><p>5. Медкартка</p></article>
+          <article class="card reveal"><p>6. Коли до ветеринара</p></article>
+          <article class="card reveal"><p>7. Короткі гіди</p></article>
+          <article class="card reveal"><p>8. Чек-листи</p></article>
         </div>
       </section>
 
-      <section class="section container" id="pricing">
-        <div class="section__heading reveal">
-          <p class="eyebrow">Гибкие условия</p>
-          <h2>Тарифы</h2>
-        </div>
-        <div class="pricing-grid">
-          <article class="glass-card pricing-card reveal">
-            <h3>Start</h3>
-            <p class="price">₽390 <span>/ месяц</span></p>
-            <ul>
-              <li>Базовый персональный план</li>
-              <li>Напоминания 1 раз в день</li>
-              <li>Поддержка по email</li>
-            </ul>
-            <a class="btn btn--ghost" href="#lead-form">Выбрать</a>
-          </article>
-          <article class="glass-card pricing-card pricing-card--highlight reveal">
-            <p class="badge">Популярный</p>
-            <h3>Care+</h3>
-            <p class="price">₽890 <span>/ месяц</span></p>
-            <ul>
-              <li>Углублённый план + сценарии</li>
-              <li>Умные напоминания и чек-листы</li>
-              <li>Приоритетная поддержка</li>
-            </ul>
-            <a class="btn btn--primary" href="#lead-form">Выбрать</a>
-          </article>
-          <article class="glass-card pricing-card reveal">
-            <h3>Pro</h3>
-            <p class="price">₽1590 <span>/ месяц</span></p>
-            <ul>
-              <li>Индивидуальные рекомендации</li>
-              <li>Полный трекер здоровья</li>
-              <li>Поддержка с персональным куратором</li>
-            </ul>
-            <a class="btn btn--ghost" href="#lead-form">Выбрать</a>
-          </article>
-        </div>
+      <section class="section container" id="quiz">
+        <h2 class="reveal">Квіз</h2>
+        <form class="card quiz-form reveal" id="quizForm">
+          <label>1. Хто у вас?
+            <select name="petType" required><option value="">Оберіть</option><option>Кіт</option><option>Собака</option></select>
+          </label>
+          <label>2. Порода<input type="text" name="breed" required /></label>
+          <label>3. Вік
+            <select name="age" required><option value="">Оберіть</option><option>0–1 рік</option><option>1–3 роки</option><option>3–7 років</option><option>7+ років</option></select>
+          </label>
+          <label>4. Основна ціль
+            <select name="goal" required><option value="">Оберіть</option><option>Харчування</option><option>Догляд</option><option>Здоров’я</option><option>Виховання</option></select>
+          </label>
+          <label>5. Ім’я + Контакт (Telegram або Email)<input type="text" name="contact" required /></label>
+          <button class="btn" type="submit">Надіслати</button>
+        </form>
+      </section>
+
+      <section class="section container" id="early">
+        <h2 class="reveal">Ранній доступ зі знижкою</h2>
+        <article class="card early reveal">
+          <p>Це тест попиту. Оплату зараз не списуємо — лише фіксуємо бажання отримати доступ за $5.</p>
+          <div class="price"><span class="old">$20</span> <strong>$5</strong> <span class="badge">-75%</span></div>
+          <p>Таймер: <span id="timer">23:59:59</span></p>
+          <p>Залишилось місць: <span id="seats">47</span></p>
+          <button class="btn" id="reserveBtn" type="button">Забронювати за $5</button>
+        </article>
       </section>
 
       <section class="section container" id="reviews">
-        <div class="section__heading reveal">
-          <p class="eyebrow">Нам доверяют</p>
-          <h2>Отзывы</h2>
-        </div>
-        <div class="reviews-grid">
-          <article class="glass-card reveal">
-            <p>«Наконец-то понятный режим питания для моего шпица. Напоминания спасают!»</p>
-            <strong>Марина, владелица шпица</strong>
-          </article>
-          <article class="glass-card reveal">
-            <p>«С PetCare щенок быстрее освоил команды, а у нас меньше хаоса дома.»</p>
-            <strong>Олег, хозяин корги</strong>
-          </article>
-          <article class="glass-card reveal">
-            <p>«Отдельный плюс за чек-листы по здоровью: ничего не забываем перед визитом.»</p>
-            <strong>Екатерина, владелица кота</strong>
-          </article>
+        <h2 class="reveal">Відгуки</h2>
+        <div class="grid">
+          <article class="card reveal"><h3>Олена, Київ</h3><p>Нарешті все по поличках.</p></article>
+          <article class="card reveal"><h3>Максим, Львів</h3><p>Зручно і без зайвої інформації.</p></article>
+          <article class="card reveal"><h3>Ірина, Дніпро</h3><p>Спокійніше за здоров’я мого улюбленця.</p></article>
         </div>
       </section>
 
       <section class="section container" id="faq">
-        <div class="section__heading reveal">
-          <p class="eyebrow">Вопросы и ответы</p>
-          <h2>FAQ</h2>
+        <h2 class="reveal">FAQ</h2>
+        <div class="faq">
+          <details class="card reveal"><summary>Що таке PetCare?</summary><p>Це персональний сервіс догляду за улюбленцем.</p></details>
+          <details class="card reveal"><summary>Кому підходить сервіс?</summary><p>Власникам котів і собак будь-якого віку.</p></details>
+          <details class="card reveal"><summary>Чи є нагадування?</summary><p>Так, для процедур, щеплень і важливих візитів.</p></details>
+          <details class="card reveal"><summary>Чи замінює це ветеринара?</summary><p>Ні, це інструмент підтримки та підготовки.</p></details>
+          <details class="card reveal"><summary>Як отримати ранній доступ?</summary><p>Залиште контакт у квізі або натисніть бронювання.</p></details>
+          <details class="card reveal"><summary>Скільки коштує?</summary><p>Для раннього доступу — $5 замість $20.</p></details>
         </div>
-        <div class="faq-list reveal">
-          <article class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              Подходит ли сервис для кошек и собак?
-            </button>
-            <div class="faq-answer" hidden>
-              <p>Да, сервис поддерживает кошек, собак и других домашних питомцев с учётом типа ухода.</p>
-            </div>
-          </article>
-          <article class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              Можно ли менять тариф позже?
-            </button>
-            <div class="faq-answer" hidden>
-              <p>Конечно, вы можете повысить или понизить тариф в любой момент без потери данных.</p>
-            </div>
-          </article>
-          <article class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              Как приходят напоминания?
-            </button>
-            <div class="faq-answer" hidden>
-              <p>Напоминания можно получать в Telegram и по email, в зависимости от выбранного тарифа.</p>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="section container" id="lead-form">
-        <div class="section__heading reveal">
-          <p class="eyebrow">Начните уже сегодня</p>
-          <h2>Получить персональный план</h2>
-        </div>
-        <form class="lead-form glass-card reveal" aria-label="Форма заявки на персональный план">
-          <label>Имя
-            <input type="text" name="name" required aria-label="Введите ваше имя" />
-          </label>
-          <label>Email или Telegram
-            <input type="text" name="contact" required aria-label="Введите контакт: email или Telegram" />
-          </label>
-          <label>Вид питомца
-            <select name="petType" required aria-label="Выберите вид питомца">
-              <option value="">Выберите</option>
-              <option>Собака</option>
-              <option>Кошка</option>
-              <option>Птица</option>
-              <option>Грызун</option>
-              <option>Другой</option>
-            </select>
-          </label>
-          <label>Порода
-            <input type="text" name="breed" required aria-label="Введите породу питомца" />
-          </label>
-          <label>Возраст
-            <select name="age" required aria-label="Выберите возраст питомца">
-              <option value="">Выберите</option>
-              <option>До 1 года</option>
-              <option>1–3 года</option>
-              <option>4–7 лет</option>
-              <option>8+ лет</option>
-            </select>
-          </label>
-          <label>Цель
-            <select name="goal" required aria-label="Выберите вашу цель">
-              <option value="">Выберите</option>
-              <option>Наладить питание</option>
-              <option>Улучшить дисциплину</option>
-              <option>Контроль здоровья</option>
-              <option>Комплексный уход</option>
-            </select>
-          </label>
-          <button class="btn btn--primary" type="submit">Отправить заявку</button>
-        </form>
       </section>
     </main>
 
-    <footer class="footer">
-      <div class="container footer__inner">
-        <p>© 2026 PetCare. Все права защищены.</p>
-        <nav aria-label="Ссылки в подвале">
-          <a href="#top">Вверх</a>
-          <a href="#features">Возможности</a>
-          <a href="#pricing">Тарифы</a>
-          <a href="#lead-form">Заявка</a>
-        </nav>
+    <div class="modal" id="thanksModal" aria-hidden="true">
+      <div class="modal__box card">
+        <p>Дякуємо! Ваш план готується.</p>
+        <button class="btn btn--ghost" id="closeModal" type="button">Закрити</button>
       </div>
-    </footer>
+    </div>
 
-    <div class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
     <script src="script.js"></script>
   </body>
 </html>
