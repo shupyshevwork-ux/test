@@ -1,213 +1,146 @@
 <!DOCTYPE html>
-<html lang="uk" data-theme="light">
+<html lang="uk">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="PetCare — персональний помічник з догляду за улюбленцем: харчування, нагадування, медкартка та поради."
+      content="PetCare — персональний план турботи для вашого улюбленця"
     />
-    <title>PetCare — Преміальний догляд за улюбленцем</title>
+    <title>PetCare Landing</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="header">
-      <div class="container nav-wrap">
-        <a class="brand" href="#hero">PetCare</a>
-        <button class="menu-toggle" type="button" aria-label="Відкрити меню" aria-expanded="false" aria-controls="nav">☰</button>
-        <nav class="nav" id="nav" aria-label="Основна навігація">
-          <a href="#benefits">Переваги</a>
-          <a href="#how">Як це працює</a>
-          <a href="#inside">Що всередині</a>
-          <a href="#reviews">Відгуки</a>
-          <a href="#faq">FAQ</a>
-          <a href="#early">Ранній доступ</a>
-          <a class="btn btn--small" href="#quiz">Почати квіз</a>
-          <button class="theme-toggle" type="button" aria-label="Перемкнути тему">🌓</button>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="#hero" aria-label="PUPHUB">
+          <span class="logo-icon" aria-hidden="true">
+            <svg viewBox="0 0 40 40" role="img">
+              <circle cx="12" cy="10" r="4"></circle>
+              <circle cx="20" cy="7" r="4"></circle>
+              <circle cx="28" cy="10" r="4"></circle>
+              <path d="M20 34c-8 0-12-7-8-12s7 0 8 0 5-4 8 0 0 12-8 12z"></path>
+            </svg>
+          </span>
+          <span class="logo-text">PUPHUB</span>
+        </a>
+
+        <button
+          class="burger"
+          id="burger"
+          type="button"
+          aria-label="Відкрити меню"
+          aria-expanded="false"
+          aria-controls="main-nav"
+        >
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+          <a href="#services">OUR SERVICES</a>
+          <a href="#about">ABOUT US</a>
+          <a href="#products">PRODUCTS</a>
+          <a href="#pet-care">PET CARE</a>
+          <a href="#contact">CONTACT</a>
         </nav>
+
+        <div class="header-actions">
+          <button class="btn btn-dark" type="button">SIGN IN</button>
+          <button class="btn btn-light" type="button">REGISTER</button>
+        </div>
       </div>
     </header>
 
     <main>
-      <section class="hero container" id="hero">
-        <div class="hero__content reveal">
-          <div class="chips">
-            <span>Харчування</span><span>Догляд</span><span>Нагадування</span><span>Медкартка</span>
+      <section class="hero" id="hero">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <h1>
+              Персональний план<br />
+              турботи для вашого<br />
+              улюбленця
+            </h1>
+            <p>
+              Точні рекомендації за породою, віком та<br />
+              ритмом життя. Менше хаосу, більше<br />
+              спокою — все в одному інтерфейсі.
+            </p>
+            <a class="cta" href="#services">
+              <span>Спробувати</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M8 5l8 7-8 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
           </div>
-          <h1>Персональний план турботи для вашого улюбленця</h1>
-          <p class="subtitle">Точні рекомендації за породою, віком та ритмом життя. Менше хаосу, більше спокою — все в одному інтерфейсі.</p>
-          <div class="actions">
-            <a class="btn" href="#quiz">Почати квіз</a>
-            <a class="btn btn--ghost" href="#early">Ранній доступ</a>
-          </div>
-          <div class="hero-stats">
-            <article class="mini-card"><strong>2 хв</strong><span>План за 2 хвилини</span></article>
-            <article class="mini-card"><strong>24/7</strong><span>Розумні нагадування</span></article>
-            <article class="mini-card"><strong>AI Fit</strong><span>Під породу та вік</span></article>
-          </div>
-        </div>
 
-        <figure class="hero__photo reveal" aria-label="Фото щасливого улюбленця">
-          <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=900&q=80" alt="Щасливий собака на прогулянці" loading="lazy" />
-          <figcaption class="feature-badge feature-badge--one">+90% власників кажуть: менше стресу</figcaption>
-          <figcaption class="feature-badge feature-badge--two">Поради щодня • у зручний час</figcaption>
-        </figure>
-      </section>
+          <div class="hero-visual" aria-label="Happy dog illustration">
+            <div class="blob">
+              <div class="paw-pattern paw-1">🐾</div>
+              <div class="paw-pattern paw-2">🐾</div>
+              <div class="paw-pattern paw-3">🐾</div>
+              <div class="paw-pattern paw-4">🐾</div>
+              <div class="paw-pattern paw-5">🐾</div>
 
-      <section class="section section--tinted" id="benefits">
-        <div class="container">
-          <h2 class="reveal">Знайомо?</h2>
-          <div class="grid grid--3">
-            <article class="card reveal"><h3>Інформації багато — ясності мало</h3><p>Поради суперечать одна одній, і складно зрозуміти, що підходить саме вам.</p></article>
-            <article class="card reveal"><h3>Чим годувати правильно?</h3><p>План харчування залежить від ваги, віку, активності та особливостей породи.</p></article>
-            <article class="card reveal"><h3>Легко забути важливе</h3><p>Обробки, щеплення, аналізи й огляди потребують чіткої системи нагадувань.</p></article>
-            <article class="card reveal"><h3>Поведінка й виховання</h3><p>Зручно, коли підказки структуровані по етапах, а не розкидані в нотатках.</p></article>
-            <article class="card reveal"><h3>Тривога через симптоми</h3><p>PetCare допомагає вести записи та швидко бачити динаміку стану.</p></article>
-            <article class="card card--wide reveal"><h3>Хочеться порядку</h3><p>Цифрова медкартка, історія процедур і зрозумілий маршрут догляду — в одному місці.</p></article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section container" id="how">
-        <h2 class="reveal">Як це працює</h2>
-        <div class="steps">
-          <article class="card step-card reveal">
-            <span class="step-card__num">01</span>
-            <h3>Заповнюєте короткий квіз</h3>
-            <p>Вкажіть базові дані про улюбленця, щоб система зібрала персональний профіль.</p>
-          </article>
-          <article class="card step-card reveal">
-            <span class="step-card__num">02</span>
-            <h3>Отримуєте рекомендації</h3>
-            <p>План харчування, догляду та здоров'я формується під ваш ритм і цілі.</p>
-          </article>
-          <article class="card step-card reveal">
-            <span class="step-card__num">03</span>
-            <h3>Дієте за планом</h3>
-            <p>Нагадування та нотатки тримають важливі задачі під контролем кожного дня.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section section--tinted" id="inside">
-        <div class="container">
-          <h2 class="reveal">Що всередині</h2>
-          <div class="inside-grid">
-            <article class="card inside-card inside-card--wide reveal"><span class="inside-icon">🍽️</span><h3>План харчування</h3><p>Раціон з урахуванням віку та активності.</p></article>
-            <article class="card inside-card reveal"><span class="inside-icon">🔔</span><h3>Нагадування</h3><p>Щеплення, процедури, візити.</p></article>
-            <article class="card inside-card reveal"><span class="inside-icon">🩺</span><h3>Медкартка</h3><p>Історія станів і призначень.</p></article>
-            <article class="card inside-card reveal"><span class="inside-icon">📈</span><h3>Трекінг прогресу</h3><p>Помітні зміни по тижнях.</p></article>
-            <article class="card inside-card inside-card--wide reveal"><span class="inside-icon">🧠</span><h3>Поради по поведінці</h3><p>Короткі сценарії для щоденних ситуацій.</p></article>
-            <article class="card inside-card reveal"><span class="inside-icon">🗂️</span><h3>Досьє породи</h3><p>Особливості догляду у форматі чеклистів.</p></article>
-            <article class="card inside-card reveal"><span class="inside-icon">💬</span><h3>Підказки дня</h3><p>Невеликі дії з великим ефектом.</p></article>
-            <article class="card inside-card reveal"><span class="inside-icon">👨‍⚕️</span><h3>Контакти клінік</h3><p>Швидкий доступ до потрібної допомоги.</p></article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section container" id="quiz">
-        <h2 class="reveal">Короткий квіз для персонального плану</h2>
-        <form class="card quiz-form reveal" id="quizForm">
-          <div class="quiz-progress"><div class="quiz-progress__bar" id="quizProgressBar"></div></div>
-          <p class="quiz-progress__label" id="quizStepLabel">Крок 1 з 5</p>
-
-          <div class="quiz-step active" data-step="1">
-            <label>1. Хто у вас?
-              <select name="petType" required>
-                <option value="">Оберіть</option>
-                <option>Кіт</option>
-                <option>Собака</option>
-              </select>
-            </label>
-          </div>
-          <div class="quiz-step" data-step="2"><label>2. Порода<input type="text" name="breed" required /></label></div>
-          <div class="quiz-step" data-step="3"><label>3. Вік
-            <select name="age" required>
-              <option value="">Оберіть</option><option>0–1 рік</option><option>1–3 роки</option><option>3–7 років</option><option>7+ років</option>
-            </select></label></div>
-          <div class="quiz-step" data-step="4"><label>4. Основна ціль
-            <select name="goal" required>
-              <option value="">Оберіть</option><option>Харчування</option><option>Догляд</option><option>Здоров’я</option><option>Виховання</option>
-            </select></label></div>
-          <div class="quiz-step" data-step="5"><label>5. Ім’я + Контакт (Telegram або Email)<input type="text" name="contact" required /></label></div>
-
-          <div class="quiz-nav">
-            <button class="btn btn--ghost" id="quizBack" type="button">Назад</button>
-            <button class="btn" id="quizNext" type="button">Далі</button>
-            <button class="btn" id="quizSubmit" type="submit">Отримати план</button>
-          </div>
-        </form>
-      </section>
-
-      <section class="section section--tinted" id="early">
-        <div class="container">
-          <article class="card promo reveal">
-            <div class="promo__content">
-              <span class="badge">Early access</span>
-              <h2>Станьте частиною запуску PetCare</h2>
-              <p>Фіксуємо ранній доступ за спеціальною ціною. Першими отримайте персональні функції та нагадування.</p>
-              <div class="price"><span class="old">$20</span> <strong>$5</strong></div>
-              <div class="timer-pills" id="timer">
-                <span class="pill"><b>23</b><small>HH</small></span>
-                <span class="pill"><b>59</b><small>MM</small></span>
-                <span class="pill"><b>59</b><small>SS</small></span>
+              <div class="dog-placeholder" role="img" aria-label="Happy dog image">
+                <span>Happy dog image</span>
               </div>
-              <div class="seats-wrap">
-                <p>Місць залишилось: <strong id="seats">47</strong></p>
-                <div class="progress"><span id="seatsProgress"></span></div>
-              </div>
-              <button class="btn" id="reserveBtn" type="button">Забронювати ранній доступ</button>
             </div>
-            <figure class="promo__photo" aria-hidden="true">
-              <img src="https://images.unsplash.com/photo-1519052537078-e6302a4968d4?auto=format&fit=crop&w=900&q=80" alt="Кіт відпочиває на дивані" loading="lazy" />
-            </figure>
-          </article>
+
+            <div class="avatar avatar-a"></div>
+            <div class="avatar avatar-b"></div>
+            <div class="avatar avatar-c"></div>
+            <div class="avatar avatar-d"></div>
+
+            <div class="deco-paw deco-paw-violet">🐾</div>
+            <div class="deco-paw deco-paw-pink">🐾</div>
+            <div class="deco-paw deco-paw-orange">🐾</div>
+          </div>
         </div>
+
+        <svg class="hero-wave" viewBox="0 0 1440 190" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0,90 C180,170 360,0 570,62 C780,124 920,188 1130,140 C1270,107 1370,100 1440,113 L1440,190 L0,190 Z"></path>
+        </svg>
       </section>
 
-      <section class="section container" id="reviews">
-        <h2 class="reveal">Відгуки</h2>
-        <div class="review-grid">
-          <article class="card review review--featured reveal">
-            <div class="avatar" aria-hidden="true">О</div>
-            <h3>Олена, Київ</h3>
-            <blockquote>“Я перестала гуглити щовечора. Усі дії по догляду тепер у зрозумілому ритмі, а медкартка завжди під рукою.”</blockquote>
-          </article>
-          <article class="card review reveal">
-            <div class="avatar" aria-hidden="true">М</div>
-            <h3>Максим, Львів</h3>
-            <blockquote>“Подобається, що це не загальні поради, а реальні рекомендації під нашу породу.”</blockquote>
-          </article>
-          <article class="card review reveal">
-            <div class="avatar" aria-hidden="true">І</div>
-            <h3>Ірина, Дніпро</h3>
-            <blockquote>“З нагадуваннями я більше не хвилююся, що пропущу важливий візит або процедуру.”</blockquote>
-          </article>
-        </div>
-      </section>
-
-      <section class="section section--tinted" id="faq">
+      <section class="services" id="services">
         <div class="container">
-          <h2 class="reveal">FAQ</h2>
-          <div class="faq">
-            <article class="card faq-item reveal"><button class="faq-question" type="button"><span class="faq-index">01</span><span>Чи замінює PetCare ветеринара?</span><span class="chevron">⌄</span></button><div class="faq-answer"><p>Ні. Це помічник з догляду та організації. При підозрі на хворобу звертайтесь до лікаря.</p></div></article>
-            <article class="card faq-item reveal"><button class="faq-question" type="button"><span class="faq-index">02</span><span>Для кого підійде сервіс?</span><span class="chevron">⌄</span></button><div class="faq-answer"><p>Для власників котів і собак будь-якого віку — як новачків, так і досвідчених.</p></div></article>
-            <article class="card faq-item reveal"><button class="faq-question" type="button"><span class="faq-index">03</span><span>Чи будуть нагадування?</span><span class="chevron">⌄</span></button><div class="faq-answer"><p>Так. Є щоденні та подієві нагадування про процедури, щеплення й візити.</p></div></article>
-            <article class="card faq-item reveal"><button class="faq-question" type="button"><span class="faq-index">04</span><span>Як працює ранній доступ за $5?</span><span class="chevron">⌄</span></button><div class="faq-answer"><p>Це бронювання доступу. Зараз ми фіксуємо інтерес до запуску і пріоритетний лист очікування.</p></div></article>
-            <article class="card faq-item reveal"><button class="faq-question" type="button"><span class="faq-index">05</span><span>Як швидко я отримаю план?</span><span class="chevron">⌄</span></button><div class="faq-answer"><p>Після проходження квізу надсилаємо стартові матеріали на ваш контакт.</p></div></article>
-            <article class="card faq-item reveal"><button class="faq-question" type="button"><span class="faq-index">06</span><span>Чи можна змінити план пізніше?</span><span class="chevron">⌄</span></button><div class="faq-answer"><p>Так, ви зможете оновлювати параметри профілю та отримувати актуалізовані рекомендації.</p></div></article>
+          <h2>Services Category</h2>
+          <span class="title-line" aria-hidden="true"></span>
+
+          <div class="service-grid">
+            <article class="service-card">
+              <div class="service-icon" aria-hidden="true">✂️</div>
+              <h3>Grooming</h3>
+            </article>
+
+            <article class="service-card service-card-highlight">
+              <div class="service-icon" aria-hidden="true">🦴</div>
+              <h3>Healthcare</h3>
+            </article>
+
+            <article class="service-card">
+              <div class="service-icon" aria-hidden="true">🦮</div>
+              <h3>Daycare</h3>
+            </article>
+
+            <article class="service-card service-card-highlight-soft">
+              <div class="service-icon" aria-hidden="true">🧍</div>
+              <h3>Training</h3>
+            </article>
+
+            <article class="service-card">
+              <div class="service-icon" aria-hidden="true">🛁</div>
+              <h3>Hyginic care</h3>
+            </article>
           </div>
         </div>
       </section>
-    </main>
 
-    <div class="modal" id="thanksModal" aria-hidden="true">
-      <div class="modal__box card">
-        <h3>Дякуємо 💛</h3>
-        <p>Ваш запит прийнято! Ми підготуємо персональні матеріали й надішлемо їх за вашим контактом.</p>
-        <button class="btn btn--ghost" id="closeModal" type="button">Закрити</button>
-      </div>
-    </div>
+      <section class="anchor-dummy" id="about" aria-hidden="true"></section>
+      <section class="anchor-dummy" id="products" aria-hidden="true"></section>
+      <section class="anchor-dummy" id="pet-care" aria-hidden="true"></section>
+      <section class="anchor-dummy" id="contact" aria-hidden="true"></section>
+    </main>
 
     <script src="script.js"></script>
   </body>
