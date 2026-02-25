@@ -1,22 +1,19 @@
-# PetCare Landing (UA)
+# PetCare Landing
 
-Сучасний premium landing для PetCare на чистих HTML/CSS/JS.
+Статичний лендинг на чистих HTML/CSS/JS.
 
-## Список файлів
+## Структура
 
-- `landing/index.html` — структура сторінки та контент українською.
-- `landing/styles.css` — mobile-first стилі, світла/темна тема, анімації.
-- `landing/script.js` — меню, reveal, light/dark toggle, квіз, modal, timer, місця.
-- `README.md` — коротка інструкція запуску.
+- `landing/index.html`
+- `landing/styles.css`
+- `landing/script.js`
+- `landing/assets/` (директорія для локальних ассетів)
 
-## Інструкція запуску
+## Як запустити
 
-### Варіант 1
-Відкрити `landing/index.html` у браузері.
-
-### Варіант 2
 ```bash
 cd landing
-python3 -m http.server 8000
+python -m http.server 8000
 ```
-Потім відкрити: `http://localhost:8000`
+
+Відкрийте у браузері: `http://localhost:8000`
